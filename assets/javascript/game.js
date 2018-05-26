@@ -1,56 +1,34 @@
-// INITIALIZE VARIABLES //bww add more letters
-var letters = ["a", "b", "c"];
+// Begining variables
+var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var letterToGuess; //used
 
-var letterToGuess = null;
-
-// THE ARRAY WILL HOLD WHAT WE GUESS
-var guessLetters = [];
-
-// THIS VARIABLE IS WHAT WILL BE USED TO COUNT DOWN
+var wins;
+var losses;
 var guessesRemaining = 9;
+document.querySelector("#guesses-remaining").innerHTML;
+var guessesSoFar = [];
 
-// THIS IS THE COUNTER FOR WINS/LOSSES
-var wins = 0;
-var losses = 0;
+// HTML setup of page
+document.querySelector("#guesses-remaining").innerHTML = guessesRemaining;
 
-// BELOW CREATING 3 FUNCTIONS:
-// updateGuesses
-// updateGuessesSoFar
-// updateGuessesRemaining
-// updateGuessesSoFar
-
-var updateGuessesRemaining = function () {
-// GRABBING HTML ELEMENT AND SETTING EQUAL TO GUESSES REMAINING
-// FOR EXAMPLE: guessesRemaining WILL BE DISPLAYED IN HTML
-   document.querySelector("#guesses-remaining").innerHTML = guessesRemaining;
-   // testing //return guessesRemaining; 
+// Computer chooses a random letter. It is saved at variable computerLetter.
+var computerLetter = function() {
+   letterToGuess = letters[Math.floor(Math.random() * letters.length)];
 };
-// testing // console.log(guessesRemaining);
+computerLetter(); // bww
+console.log("Computer generated random letter: " + letterToGuess); //bww
 
-var updateGuessesSoFar = function () {
-// HERE WE TAKE THE GUESSES THE USER HAS TRIED, THEN WE DISPLAY IT AS LETTERS SEPARATED BY COMMAS
-    document.querySelector("#guesses-so-far").innerHTML = guessLetters.join(", ");
- };
+// User makes letter guess
+// Key is pressed. Calls a function that is called on keyboard event
+// Stored as variable userGuess
+document.onkeydown = function(event) {
+   var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+   console.log("User just guessed: " + userGuess);
 
-var updateLetterToGuess = function () {
-// HERE WE GET A RANDOM LETTER TO GUESS AND ASSIGN BASED ON RANDOM GENERATOR
-    letterToGuess = letters[Math.floor(Math.random() * letters.length )];
- }
-// FUNCTIONS THAT WILL BE CALLED WHEN EVERYTHING IS RESET
-var reset = function() {
-    guessesRemaining = 9;
-    guessLetters = [];
-    updateLetterToGuess();
-    updateGuessesRemaining();
-    updateGuessesSoFar();
-}; 
-// EXECUTE ON PAGE LOAD
-updateLetterToGuess();
-updateGuessesRemaining();
+   guessesSoFar.push(userGuess + ", ");
+   document.querySelector("#guesses-so-far").innerHTML = guessesSoFar
 
-// LEFT
-// function to capture key stroke
-// conditional statements
-// check if match
-// after 9 x resets
-// if correct w/in 9 pop up WINNING
+// Countdown on guessesRemaining
+    document.querySelector("#guesses-remaining").innerHTML = guessesRemaining--;
+// };
+};

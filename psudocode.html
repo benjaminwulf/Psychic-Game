@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <title>Psychic-Game Psudocode</title>
+</head>
+<body>
+    <h1>Psychic-Game Psudocode</h1>
+      <h2>Guess what I'm thinking of...</h2>
+      <ol>
+          <li>Create variable named wins.</li>
+          <li>Create variable named losses.</li>
+          <li>Create variable named guessesRemaining.</li>
+          <li>Create array named guessesSoFar</li>
+          <li>Computer chooses a random letter. It is saved at variable computerLetter.</li>
+          <li>User chooses a letter.</li>
+            <ul>
+                <li>Key is pressed. Calls a function that is called on keyboard event</li>
+                <li>Pressed key stored in variable</li>
+                <li>Variable is pushed onto Array to will contain up to 9 strings as letters</li>
+            </ul>
+          <li>Computer choice is compared to users choice for equality inside for loop</li>
+            <ul>
+                <li>If equal display text signifing winner!</li>
+                <ol>Else if:
+                  <li>Display array guessesSoFar with pushed keys values.</li>
+                  <li>If variable guessesRemaining is at zero exit statement and display game over</li>
+                  <li>Else, subtract one from variable guessesRemaining with countdown for remaining turns and display.</li>
+                  <li>Prompt for keyboard event.</li>
+                </ol>
+            </ul>     
+      </ol>
+    
+</body>
+</html>
