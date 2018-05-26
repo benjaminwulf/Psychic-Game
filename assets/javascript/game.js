@@ -33,15 +33,11 @@ document.onkeydown = function (event) {
 
     //Computer choice is compared to users choice for equality inside for loop
     if (letterToGuess == userGuess) {
-    //If equal display text signifing winner!
-    document.querySelector("#winner-message").innerHTML = "We have a WINNER!";
-    } 
-    else if (letterToGuess != userGuess) {
-    document.querySelector("#press-key-to-continue").innerHTML = "Press another letter to continue";
-    } else if (guessesRemaining == 0){
-    docuement.querySelecter("#loser-message").innerHTML = "Psyche... You lose!";
-    }
-    else {
-    alert("Something went terribly wrong. Please reload page.")
+        //If equal display text signifing winner!
+        document.querySelector("#winner-message").innerHTML = "We have a WINNER!";
+    } else if (letterToGuess !== userGuess && guessesRemaining >= 0) {
+        document.querySelector("#press-key-to-continue").innerHTML = "Press another letter to continue";
+    } else { 
+        document.querySelector("#loser-message").innerHTML = "Psych... you lose!"
     }
 };
