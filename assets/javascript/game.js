@@ -1,14 +1,10 @@
 // Begining variables
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var letterToGuess;
-
 var wins = 0;
 var losses = 0;
 var guessesRemaining = 9;
-document.querySelector("#guesses-remaining").innerHTML;
 var guessesSoFar = [];
-
-// HTML setup of page
 document.querySelector("#guesses-remaining").innerHTML = guessesRemaining;
 
 // Reset of game
@@ -29,12 +25,21 @@ var computerRandomLetterGenerator = function () {
 computerRandomLetterGenerator();
 console.log("Computer generated random letter: " + letterToGuess); //bww
 
-// User makes letter guess
+// KEYBOARD PROMPT FOR MOBILE 
+function getKeyboardViaPrompt() {
+    var person = prompt("Guess a letter to get started");
+    if (person != null) {
+    var userGuess = person;
+    } else if (userAction == null) {
+        document.onkeydown = function (event) {
+     userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+    console.log("User just guessed: " + userGuess);    }
+};
+
 // Key is pressed. Calls a function that is called on keyboard event
-// Stored as variable userGuess
-document.onkeydown = function (event) {
-    var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-    console.log("User just guessed: " + userGuess);
+    // document.onkeydown = function (event) {
+    // userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+    // console.log("User just guessed: " + userGuess);
 
     guessesSoFar.push(userGuess + " ");
     document.querySelector("#guesses-so-far").innerHTML = guessesSoFar
@@ -56,4 +61,6 @@ document.onkeydown = function (event) {
         resetGame();
     }
 };
-// resetGame(); //resetGame
+resetGame(); //resetGame
+
+///=================Work on reset
