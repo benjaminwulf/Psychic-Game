@@ -13,10 +13,13 @@ document.querySelector("#guesses-remaining").innerHTML = guessesRemaining;
 
 // Reset of game
 var resetGame = function() {
-    computerRandomLetterGenerator();
+    // computerRandomLetterGenerator();
     guessesRemaining = 9;
+    document.querySelector("#guesses-remaining").innerHTML = guessesRemaining
     guessesSoFar = [];
-    document.querySelector("#reset-message").innerHTML = "Starting next round!";
+    document.querySelector("#guesses-so-far").innerHTML = guessesSoFar;
+    document.querySelector("#loser-message").innerHTML = " ";
+    document.querySelector("#winner-message").innerHTML = " ";
 };
 
 // Computer chooses a random letter. It is saved at variable computerLetter.
@@ -46,12 +49,11 @@ document.onkeydown = function (event) {
         document.querySelector("#winner-message").innerHTML = "We have a WINNER!";
         document.querySelector("#wins").innerHTML = wins;
         resetGame();
-    } else if (letterToGuess !== userGuess && guessesRemaining >= 1) {
-        document.querySelector("#press-key-to-continue").innerHTML = "Press another letter to continue";
-    } else if (letterToGuess !== userGuess && guessesRemaining <= 0) {
+    } else if (letterToGuess !== userGuess && guessesRemaining == 0) {
         losses++;
         document.querySelector("#loser-message").innerHTML = "Psych... you lose!"
         document.querySelector("#losses").innerHTML = losses;
         resetGame();
     }
 };
+// resetGame(); //resetGame
