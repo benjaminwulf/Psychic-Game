@@ -12,9 +12,11 @@ document.querySelector("#guesses-remaining").innerHTML = guessesRemaining;
 function resetGame() {
     computerRandomLetterGenerator();
     guessesRemaining = 9;
-    document.querySelector("#guesses-remaining").innerHTML = guessesRemaining
+    document.querySelector("#guesses-remaining").innerHTML = guessesRemaining;
     guessesSoFar = [];
     document.querySelector("#guesses-so-far").innerHTML = guessesSoFar;
+    document.querySelector("#winner-message").innerHTML = " ";
+    document.querySelector("#loser-message").innerHTML = " ";
 };
 
 // Computer chooses a random letter. It is saved at variable computerLetter.
@@ -31,12 +33,13 @@ function compareFunc() {
     if (letterToGuess == userGuess) {
         //If equal display text signifing winner!
         wins++;
+        document.querySelector("#winner-message").innerHTML = "WINNING!"
         document.querySelector("#wins").innerHTML = wins;
         resetGame();
-    } else if (letterToGuess !== userGuess && guessesRemaining > 0) {
+    } else if (letterToGuess !== userGuess && guessesRemaining !== 1) {
         document.querySelector("#guesses-so-far").innerHTML = guessesSoFar;
         guessesRemaining--;
-        document.querySelector("#guesses-remaining").innerHTML = guessesRemaining--;
+        document.querySelector("#guesses-remaining").innerHTML = guessesRemaining;
         }    
      else {
         losses++;
@@ -46,43 +49,27 @@ function compareFunc() {
     }
 };
 
-// TAKING KEYPRESS
-document.onkeydown = function (event) {
-    userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-    compareFunc(); 
-};
-
 // KEYBOARD PROMPT FOR MOBILE 
-function getKeyboardViaPrompt() {
-    var person = prompt("Guess a letter to get started");
-    if (person != null) {
+function getInput() {
+    submit = document.getElementById("#form-input-js").submit();
+    // var person = prompt("Guess a letter to get started");
+    if (submit != null) {
         userGuess = person;
+        compareFunc();
     } else {
         console.log("input is null " + userGuess);
         
     }
 };
 
-//==================== OLD =============================
-// function doStuff(userGuess) {
-//         guessesSoFar.push(userGuess + " ");
-//         document.querySelector("#guesses-so-far").innerHTML = guessesSoFar
+// IF null WE INSTEAD WILL TAKE KEYPRESS FROM THE USERS WITH KEYBOARD
+if (getInput = null) {
+    compareFunc(); 
+} else {
+    document.onkeydown = function (event) {
+    userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+    compareFunc(); 
+    };
+}
 
-//         // Countdown on guessesRemaining
-//         document.querySelector("#guesses-remaining").innerHTML = guessesRemaining--;
-
-//         //Computer choice is compared to users choice for equality inside for loop
-//         if (letterToGuess == userGuess) {
-//             //If equal display text signifing winner!
-//             wins++;
-//             document.querySelector("#winner-message").innerHTML = "We have a WINNER!";
-//             document.querySelector("#wins").innerHTML = wins;
-//             resetGame();
-//         } else if (letterToGuess !== userGuess && guessesRemaining == 0) {
-//             losses++;
-//             document.querySelector("#loser-message").innerHTML = "Psych... you lose!"
-//             document.querySelector("#losses").innerHTML = losses;
-//             resetGame();
-//         }
-//     }
-// };
+// CREATE A INPUT BOX FOR USERS ON MOBILE
