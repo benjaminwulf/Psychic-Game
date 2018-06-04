@@ -19,66 +19,53 @@
 <body>
 
 
-<!-- START GRID -->
+    <!-- START GRID -->
     <div class="container-fluid">
         <div class="row">
-        <div class="col-sm-4">
-            <!-- The title of the page -->
-            <h1>The Psychic Game</h1>
+            <div class="col-sm-12">
+                <!-- The title of the page -->
+                <h1>The Psychic Game</h1>
 
-            <h3>Guess what letter I'm thinking?</h3>
-            
-        </div>
-        <div class="col-sm-4">
-            <!-- This is where we will have the win counter in HTML. It initially shows 0  -->
-            <p>Wins:
-                <span id="wins">0</span>
-            </p>
+                <h3>Guess what letter I'm thinking?</h3>
 
-            <!-- This is where we will have the loss counter in HTML. It initially shows 0 -->
-            <p>Losses:
-                <span id="losses">0</span>
-            </p>
+            </div>
+            <div class="col-sm-6">
+                <!-- This is where we will have the win counter in HTML. It initially shows 0  -->
+                <p>Wins:
+                    <span id="wins">0</span>
+                </p>
 
-            <!-- This is where we will post the guessesLeft. Initially nothing is shown. -->
-            <p>Guesses Remaining:
-                <span id="guesses-remaining"></span>
-            </p>
+                <!-- This is where we will have the loss counter in HTML. It initially shows 0 -->
+                <p>Losses:
+                    <span id="losses">0</span>
+                </p>
 
-            <!-- This is where we will post the guessesSoFar. Initially nothing is shown. -->
-            <p>Your Guesses so far:
-                <span id="guesses-so-far"></span>
-            </p>
-        </div>
+                <!-- This is where we will post the guessesLeft. Initially nothing is shown. -->
+                <p>Guesses Remaining:
+                    <span id="guesses-remaining"></span>
+                </p>
 
-        <div class="col-sm-4">
+                <!-- This is where we will post the guessesSoFar. Initially nothing is shown. -->
+                <p>Your Guesses so far:
+                    <span id="guesses-so-far"></span>
+                </p>
+            </div>
 
-            <!-- Mobile responsive message -->
-            <p>Or Enter Letter Below</p>
+            <div class="col-sm-6">
 
-            <div class="input-group mb-3">
+                <!-- Mobile responsive message -->
+                <p>Or Enter Letter Below:</p>
+
+                <div class="input-group mb-3">
                     <input id="form-input-js" type="text" class="form-control" onclick="getInput;" value="" aria-describedby="basic-addon1">
-                  </div>
+                </div>
 
-            <h1>
-                <span id="press-key-to-continue"></span>
-            </h1>
-            <h1>
-                <span id="winner-message"></span>
-            </h1>
-            <h1>
-                <span id="loser-message"></span>
-            </h1>
-            <h1>
-                <span id="reset-message"></span>
-            </h1>
+            </div>
         </div>
-
-        <script src="assets/javascript/game.js"></script>
     </div>
-</div>
-<!-- END GRID -->
+    <!-- END GRID -->
 
+    <script src="assets/javascript/game.js"></script>
 
 </body>
 
