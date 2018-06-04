@@ -15,16 +15,14 @@ function resetGame() {
     document.querySelector("#guesses-remaining").innerHTML = guessesRemaining;
     guessesSoFar = [];
     document.querySelector("#guesses-so-far").innerHTML = guessesSoFar;
-    document.querySelector("#winner-message").innerHTML = " ";
-    document.querySelector("#loser-message").innerHTML = " ";
 };
 
 // Computer chooses a random letter. It is saved at variable computerLetter.
 var computerRandomLetterGenerator = function () {
     letterToGuess = letters[Math.floor(Math.random() * letters.length)];
 };
-computerRandomLetterGenerator();
-console.log("Computer generated random letter: " + letterToGuess); //bww
+computerRandomLetterGenerator;
+console.log("Computer generated random letter: " + letterToGuess);
 
 
 function compareFunc() {
@@ -33,17 +31,15 @@ function compareFunc() {
     if (letterToGuess == userGuess) {
         //If equal display text signifing winner!
         wins++;
-        document.querySelector("#winner-message").innerHTML = "WINNING!"
         document.querySelector("#wins").innerHTML = wins;
         resetGame();
-    } else if (letterToGuess !== userGuess && guessesRemaining !== 1) {
+    } else if (letterToGuess !== userGuess && guessesRemaining > 0) {
         document.querySelector("#guesses-so-far").innerHTML = guessesSoFar;
         guessesRemaining--;
         document.querySelector("#guesses-remaining").innerHTML = guessesRemaining;
         }    
      else {
         losses++;
-        document.querySelector("#loser-message").innerHTML = "Psych... you lose!"
         document.querySelector("#losses").innerHTML = losses;
         resetGame();
     }
@@ -51,10 +47,9 @@ function compareFunc() {
 
 // KEYBOARD PROMPT FOR MOBILE 
 function getInput() {
-    submit = document.getElementById("#form-input-js").submit();
+    userGuess = document.getElementById("#form-input-js").submit();
     // var person = prompt("Guess a letter to get started");
-    if (submit != null) {
-        userGuess = person;
+    if (userGuess != null) {
         compareFunc();
     } else {
         console.log("input is null " + userGuess);
@@ -71,5 +66,3 @@ if (getInput = null) {
     compareFunc(); 
     };
 }
-
-// CREATE A INPUT BOX FOR USERS ON MOBILE

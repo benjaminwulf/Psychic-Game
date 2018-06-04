@@ -20,7 +20,7 @@
 
 
     <!-- START GRID -->
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 <!-- The title of the page -->
@@ -29,6 +29,7 @@
                 <h3>Guess what letter I'm thinking?</h3>
 
             </div>
+        <div class="row">
             <div class="col-sm-6">
                 <!-- This is where we will have the win counter in HTML. It initially shows 0  -->
                 <p>Wins:
@@ -50,16 +51,16 @@
                     <span id="guesses-so-far"></span>
                 </p>
             </div>
+        </div>
 
+        <div class="row">
             <div class="col-sm-6">
-
                 <!-- Mobile responsive message -->
                 <p>Or Enter Letter Below:</p>
 
                 <div class="input-group mb-3">
                     <input id="form-input-js" type="text" class="form-control" onclick="getInput;" value="" aria-describedby="basic-addon1">
                 </div>
-
             </div>
         </div>
     </div>
