@@ -1,22 +1,30 @@
 <!Doctype="html">
 <html lang="en-us">
 
-<head>
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+        <!-- BOOTSTRAP CDN -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <!-- FONTS CDN -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Libre+Barcode+39|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+            crossorigin="anonymous">
+        <!-- LOCAL CSS -->
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <!-- jQuery CDN -->
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-        crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-</head>
-
-<body>
+    </head>
 
 
     <!-- START GRID -->
@@ -24,37 +32,37 @@
         <div class="row">
             <div class="col-lg">
                 <!-- The title of the page -->
-                <h1>The Psychic Game</h1>
+                <h1><strong>The Psychic Game</strong></h1>
 
-                <h3>Guess what letter I'm thinking?</h3>
+                <h1><em>Guess what letter I'm thinking?</em></h1>
 
             </div>
                 <div class="col-lg">
                     <!-- This is where we will have the win counter in HTML. It initially shows 0  -->
-                    <p>Wins:
+                    <h3 style="background-color: #33af67">Wins:
                         <span id="wins">0</span>
-                    </p>
+                    </h3>
 
                     <!-- This is where we will have the loss counter in HTML. It initially shows 0 -->
-                    <p>Losses:
+                    <h3 style="background-color: #ec3b46">Losses:
                         <span id="losses">0</span>
-                    </p>
+                    </h3>
 
                     <!-- This is where we will post the guessesLeft. Initially nothing is shown. -->
-                    <p>Guesses Remaining:
+                    <h3 style="background-color: #fef04d">Guesses Remaining:
                         <span id="guesses-remaining"></span>
-                    </p>
+                    </h3>
 
                     <!-- This is where we will post the guessesSoFar. Initially nothing is shown. -->
-                    <p>Your Guesses so far:
+                    <h3>Your Guesses so far:
                         <span id="guesses-so-far"></span>
-                    </p>
+                    </h3>
                 </div>
 
                 <div class="col-lg">
-                    <p>Start by pressing key:</p>
+                    <h1>Start by pressing key:</h1>
                     <!-- Mobile responsive message -->
-                    <p>Or use input box:</p>
+                    <h1>Or use input box:</h1>
 
                     <div class="input-group mb-3">
                         <input id="form-input-js" type="text" class="form-control" onclick="getInput;" value="" aria-describedby="basic-addon1">
